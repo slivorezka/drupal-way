@@ -30,5 +30,25 @@ $title = db_select('node', 'n')
   ->fetchField();
 ```
 
+### Get all fields of a node by node ID.
+
+```php
+$fields = db_select('node', 'n')
+  ->fields('n')
+  ->condition('n.nid', 123)
+  ->execute()
+  ->fetchObject();
+```
+
+### Get "title" and "type" of all published nodes.
+
+```
+$nodes = db_select('node', 'n')
+  ->fields('n', array('title', 'type'))
+  ->condition('n.status', NODE_PUBLISHED)
+  ->execute()
+  ->fetchAll();
+```
+
 
 
