@@ -15,7 +15,7 @@ db_insert('table', 't');
 // You may use ut if you need Insert or Update some value.
 db_merge('table');
 // Static query.
-db_query("SOME SQL WHERE value = :arg", array(':arg' => 'value'));
+db_query('SOME SQL WHERE value = :arg', [':arg' => 'value']);
 ```
 
 
