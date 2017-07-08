@@ -85,7 +85,7 @@ $nodes = db_select('node', 'n')
 
 ### Use "JOIN"
 
-```
+```php
 $query = db_select('node', 'n');
 $query->Join('users', 'u', 'n.uid = u.uid');
 // Also, you can use "innerJoin", "leftJoin" or "rightJoin".
@@ -114,7 +114,7 @@ $nodes = db_select('node', 'n')
 
 ### Use "IN"
 
-```
+```php
 $nodes = db_select('node', 'n')
   ->fields('n')
   ->condition('n.nid', array(123, 456, 789), 'IN')
