@@ -75,7 +75,7 @@ $nodes = db_select('node', 'n')
 
 ### Get only 10 node titles
 
-```
+```php
 $nodes = db_select('node', 'n')
   ->fields('n', array('title',))
   ->range(0, 10)
