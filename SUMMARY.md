@@ -1,5 +1,5 @@
 # Summary
 
-* [Introduction](README.md)
+* [Drupal Way](README.md)
 * [First Chapter](chapter1.md)
 
