@@ -296,7 +296,7 @@ db_truncate('table')->execute();
 
 ### Use "TRANSACTION"
 
-```
+```php
 $transaction = db_transaction();
 
 try {
