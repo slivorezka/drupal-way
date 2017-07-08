@@ -18,5 +18,17 @@ db_merge('table');
 db_query('SOME SQL WHERE value = :arg', [':arg' => 'value']);
 ```
 
+## Examples:
+
+### Get node title by node ID.
+
+```php
+$title = db_select('node', 'n')
+  ->fields('n', array('title'))
+  ->condition('n.nid', 123)
+  ->execute()
+  ->fetchField();
+```
+
 
 
