@@ -12,10 +12,12 @@ db_delete('table', 't');
 // Insert.
 db_insert('table', 't');
 // Merge it is combination of Insert action and Update action.
-// You may use ut if you need Insert or Update some value.
+// You may use it if you need Insert or Update some value.
 db_merge('table');
 // Static query.
 db_query('SOME SQL WHERE value = :arg', [':arg' => 'value']);
+// Static query with range.
+db_query_range('SOME SQL WHERE value = :arg', [':arg' => 'value'], 0, 10);
 ```
 
 ## Examples:
