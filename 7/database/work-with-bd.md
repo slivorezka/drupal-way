@@ -185,6 +185,42 @@ $nodes->where('YEAR(FROM_UNIXTIME(n.created)) = :created', array(':created' => 2
 $result = $year->execute()->fetchAll();
 ```
 
+### Use "TRUNCATE" \(cleaning table\)
+
+```php
+db_truncate('table')->execute();
+```
+
+### Use "TRANSACTION"
+
+```php
+$transaction = db_transaction();
+
+try {
+  // Some important SQL query or actions.
+}
+catch (Exception $e) {
+  $transaction->rollback();
+  throw $e;
+}
+```
+
+### Use "NOT EXISTS"
+
+Select all node ID with empty "body" field.
+
+```php
+$nodes = db_select('node', 'n')
+  ->fields('n', array('nid'))
+  ->notExists(
+    db_select('field_data_body', 'b')
+      ->fields('b', array('entity_id'))
+      ->where('b.entity_id = n.nid')
+   )
+   ->execute()
+   ->fetchAll();
+```
+
 ### Use the same field name on couple tables
 
 Sometime you need do a select with join and both tables can have field like "title". Well Drupal will set separate name for these double fields like "title" and "title\_1". But you can set any name for these fields.
@@ -287,26 +323,6 @@ db_merge('table')
 ```php
 if (db_table_exists('table')) {
   // Actions ...
-}
-```
-
-### Use "TRUNCATE" \(cleaning table\)
-
-```php
-db_truncate('table')->execute();
-```
-
-### Use "TRANSACTION"
-
-```php
-$transaction = db_transaction();
-
-try {
-  // Some important SQL query or actions.
-}
-catch (Exception $e) {
-  $transaction->rollback();
-  throw $e;
 }
 ```
 
