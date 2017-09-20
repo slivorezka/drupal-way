@@ -247,7 +247,7 @@ $date = $date->execute()->fetchAll();
 ### Count the number of records in the table
 
 ```php
-$count = db_select('node', 'n')
+$count = db_select('node')
   ->countQuery()
   ->execute()
   ->fetchField();
