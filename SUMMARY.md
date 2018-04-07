@@ -6,5 +6,8 @@
 * [Drupal 8](/drupal-8.md)
   * [Get link](/8/Links/get-link.md)
   * [Reset weigh for all terms](/8/Taxonomy Term/reset-weigh-for-all-terms.md)
+  * [Get entity by alias](/get-entity-by-alias.md "Get entity by alias")
 * [Get entity by alias](get-entity-by-alias.md)
+
+
 
